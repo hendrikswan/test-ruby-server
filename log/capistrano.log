@@ -1134,3 +1134,153 @@ remote: Total 5 (delta 3), reused 5 (delta 3), pack-reused 0[K
   INFO [437552ee] Running /usr/bin/env echo "Branch master (at ae105546470fbf4e0e88d71c7cf14c5a44139175) deployed as release 20170529131241 by hendrik" >> /var/www/test_aws_setup/revisions.log as ec2-user@10.0.1.147
  DEBUG [437552ee] Command: cd /var/www/test_aws_setup/releases && /usr/bin/env echo "Branch master (at ae105546470fbf4e0e88d71c7cf14c5a44139175) deployed as release 20170529131241 by hendrik" >> /var/www/test_aws_setup/revisions.log
   INFO [437552ee] Finished in 0.478 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-05-29 15:13:56 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [9b704ff5] Running /usr/bin/env mkdir -p /tmp as ec2-user@10.0.1.147
+ DEBUG [9b704ff5] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9b704ff5] Finished in 3.981 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-test_aws_setup-production-hendrik.sh 0.0%
+  INFO Uploading /tmp/git-ssh-test_aws_setup-production-hendrik.sh 100.0%
+  INFO [069190f1] Running /usr/bin/env chmod 700 /tmp/git-ssh-test_aws_setup-production-hendrik.sh as ec2-user@10.0.1.147
+ DEBUG [069190f1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-test_aws_setup-production-hendrik.sh
+  INFO [069190f1] Finished in 0.516 seconds with exit status 0 (successful).
+  INFO [26476b70] Running /usr/bin/env git ls-remote https://github.com/hendrikswan/test-ruby-server HEAD as ec2-user@10.0.1.147
+ DEBUG [26476b70] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_aws_setup-production-hendrik.sh" ; /usr/bin/env git ls-remote https://github.com/hendrikswan/test-ruby-server HEAD )
+ DEBUG [26476b70] 	ae105546470fbf4e0e88d71c7cf14c5a44139175	HEAD
+  INFO [26476b70] Finished in 1.098 seconds with exit status 0 (successful).
+  INFO [ff2904e7] Running /usr/bin/env mkdir -p /var/www/test_aws_setup/shared /var/www/test_aws_setup/releases as ec2-user@10.0.1.147
+ DEBUG [ff2904e7] Command: /usr/bin/env mkdir -p /var/www/test_aws_setup/shared /var/www/test_aws_setup/releases
+  INFO [ff2904e7] Finished in 0.550 seconds with exit status 0 (successful).
+  INFO [f0f5de65] Running /usr/bin/env mkdir -p /var/www/test_aws_setup/shared/log /var/www/test_aws_setup/shared/tmp/pids /var/www/test_aws_setup/shared/tmp/cache /var/www/test_aws_setup/shared/tmp/sockets /var/www/test_aws_setup/shared/public/system as ec2-user@10.0.1.147
+ DEBUG [f0f5de65] Command: /usr/bin/env mkdir -p /var/www/test_aws_setup/shared/log /var/www/test_aws_setup/shared/tmp/pids /var/www/test_aws_setup/shared/tmp/cache /var/www/test_aws_setup/shared/tmp/sockets /var/www/test_aws_setup/shared/public/system
+  INFO [f0f5de65] Finished in 0.515 seconds with exit status 0 (successful).
+ DEBUG [e7472d14] Running [ -f /var/www/test_aws_setup/current/REVISION ] as ec2-user@10.0.1.147
+ DEBUG [e7472d14] Command: [ -f /var/www/test_aws_setup/current/REVISION ]
+ DEBUG [e7472d14] Finished in 0.515 seconds with exit status 0 (successful).
+ DEBUG [94bceef2] Running /usr/bin/env cat /var/www/test_aws_setup/current/REVISION 2>/dev/null as ec2-user@10.0.1.147
+ DEBUG [94bceef2] Command: /usr/bin/env cat /var/www/test_aws_setup/current/REVISION 2>/dev/null
+ DEBUG [94bceef2] 	ae105546470fbf4e0e88d71c7cf14c5a44139175
+ DEBUG [94bceef2] Finished in 0.522 seconds with exit status 0 (successful).
+ DEBUG [77ea467f] Running [ -f /var/www/test_aws_setup/repo/HEAD ] as ec2-user@10.0.1.147
+ DEBUG [77ea467f] Command: [ -f /var/www/test_aws_setup/repo/HEAD ]
+ DEBUG [77ea467f] Finished in 0.513 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/test_aws_setup/repo
+ DEBUG [150f4197] Running if test ! -d /var/www/test_aws_setup/repo; then echo "Directory does not exist '/var/www/test_aws_setup/repo'" 1>&2; false; fi as ec2-user@10.0.1.147
+ DEBUG [150f4197] Command: if test ! -d /var/www/test_aws_setup/repo; then echo "Directory does not exist '/var/www/test_aws_setup/repo'" 1>&2; false; fi
+ DEBUG [150f4197] Finished in 0.518 seconds with exit status 0 (successful).
+  INFO [9dc879b5] Running /usr/bin/env git remote set-url origin https://github.com/hendrikswan/test-ruby-server as ec2-user@10.0.1.147
+ DEBUG [9dc879b5] Command: cd /var/www/test_aws_setup/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_aws_setup-production-hendrik.sh" ; /usr/bin/env git remote set-url origin https://github.com/hendrikswan/test-ruby-server )
+  INFO [9dc879b5] Finished in 0.520 seconds with exit status 0 (successful).
+  INFO [e7a63414] Running /usr/bin/env git remote update --prune as ec2-user@10.0.1.147
+ DEBUG [e7a63414] Command: cd /var/www/test_aws_setup/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_aws_setup-production-hendrik.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [e7a63414] 	Fetching origin
+  INFO [e7a63414] Finished in 0.903 seconds with exit status 0 (successful).
+ DEBUG [cd5cfdbe] Running if test ! -d /var/www/test_aws_setup/repo; then echo "Directory does not exist '/var/www/test_aws_setup/repo'" 1>&2; false; fi as ec2-user@10.0.1.147
+ DEBUG [cd5cfdbe] Command: if test ! -d /var/www/test_aws_setup/repo; then echo "Directory does not exist '/var/www/test_aws_setup/repo'" 1>&2; false; fi
+ DEBUG [cd5cfdbe] Finished in 0.519 seconds with exit status 0 (successful).
+  INFO [698e0f59] Running /usr/bin/env mkdir -p /var/www/test_aws_setup/releases/20170529131405 as ec2-user@10.0.1.147
+ DEBUG [698e0f59] Command: cd /var/www/test_aws_setup/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_aws_setup-production-hendrik.sh" ; /usr/bin/env mkdir -p /var/www/test_aws_setup/releases/20170529131405 )
+  INFO [698e0f59] Finished in 0.512 seconds with exit status 0 (successful).
+  INFO [f7416045] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/test_aws_setup/releases/20170529131405 as ec2-user@10.0.1.147
+ DEBUG [f7416045] Command: cd /var/www/test_aws_setup/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_aws_setup-production-hendrik.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/test_aws_setup/releases/20170529131405 )
+  INFO [f7416045] Finished in 0.515 seconds with exit status 0 (successful).
+ DEBUG [c0313888] Running if test ! -d /var/www/test_aws_setup/repo; then echo "Directory does not exist '/var/www/test_aws_setup/repo'" 1>&2; false; fi as ec2-user@10.0.1.147
+ DEBUG [c0313888] Command: if test ! -d /var/www/test_aws_setup/repo; then echo "Directory does not exist '/var/www/test_aws_setup/repo'" 1>&2; false; fi
+ DEBUG [c0313888] Finished in 0.515 seconds with exit status 0 (successful).
+ DEBUG [26fbc900] Running /usr/bin/env git rev-list --max-count=1 master as ec2-user@10.0.1.147
+ DEBUG [26fbc900] Command: cd /var/www/test_aws_setup/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-test_aws_setup-production-hendrik.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [26fbc900] 	ae105546470fbf4e0e88d71c7cf14c5a44139175
+ DEBUG [26fbc900] Finished in 0.516 seconds with exit status 0 (successful).
+ DEBUG [6946d611] Running if test ! -d /var/www/test_aws_setup/releases/20170529131405; then echo "Directory does not exist '/var/www/test_aws_setup/releases/20170529131405'" 1>&2; false; fi as ec2-user@10.0.1.147
+ DEBUG [6946d611] Command: if test ! -d /var/www/test_aws_setup/releases/20170529131405; then echo "Directory does not exist '/var/www/test_aws_setup/releases/20170529131405'" 1>&2; false; fi
+ DEBUG [6946d611] Finished in 0.515 seconds with exit status 0 (successful).
+  INFO [82dc36fe] Running /usr/bin/env echo "ae105546470fbf4e0e88d71c7cf14c5a44139175" >> REVISION as ec2-user@10.0.1.147
+ DEBUG [82dc36fe] Command: cd /var/www/test_aws_setup/releases/20170529131405 && /usr/bin/env echo "ae105546470fbf4e0e88d71c7cf14c5a44139175" >> REVISION
+  INFO [82dc36fe] Finished in 0.519 seconds with exit status 0 (successful).
+  INFO [20d6ce83] Running /usr/bin/env mkdir -p /var/www/test_aws_setup/releases/20170529131405 /var/www/test_aws_setup/releases/20170529131405/tmp /var/www/test_aws_setup/releases/20170529131405/public as ec2-user@10.0.1.147
+ DEBUG [20d6ce83] Command: /usr/bin/env mkdir -p /var/www/test_aws_setup/releases/20170529131405 /var/www/test_aws_setup/releases/20170529131405/tmp /var/www/test_aws_setup/releases/20170529131405/public
+  INFO [20d6ce83] Finished in 0.509 seconds with exit status 0 (successful).
+ DEBUG [8ba1501e] Running [ -L /var/www/test_aws_setup/releases/20170529131405/log ] as ec2-user@10.0.1.147
+ DEBUG [8ba1501e] Command: [ -L /var/www/test_aws_setup/releases/20170529131405/log ]
+ DEBUG [8ba1501e] Finished in 0.518 seconds with exit status 1 (failed).
+ DEBUG [6cdf6902] Running [ -d /var/www/test_aws_setup/releases/20170529131405/log ] as ec2-user@10.0.1.147
+ DEBUG [6cdf6902] Command: [ -d /var/www/test_aws_setup/releases/20170529131405/log ]
+ DEBUG [6cdf6902] Finished in 0.518 seconds with exit status 0 (successful).
+  INFO [431d5b8e] Running /usr/bin/env rm -rf /var/www/test_aws_setup/releases/20170529131405/log as ec2-user@10.0.1.147
+ DEBUG [431d5b8e] Command: /usr/bin/env rm -rf /var/www/test_aws_setup/releases/20170529131405/log
+  INFO [431d5b8e] Finished in 0.520 seconds with exit status 0 (successful).
+  INFO [85901f99] Running /usr/bin/env ln -s /var/www/test_aws_setup/shared/log /var/www/test_aws_setup/releases/20170529131405/log as ec2-user@10.0.1.147
+ DEBUG [85901f99] Command: /usr/bin/env ln -s /var/www/test_aws_setup/shared/log /var/www/test_aws_setup/releases/20170529131405/log
+  INFO [85901f99] Finished in 0.539 seconds with exit status 0 (successful).
+ DEBUG [40643111] Running [ -L /var/www/test_aws_setup/releases/20170529131405/tmp/pids ] as ec2-user@10.0.1.147
+ DEBUG [40643111] Command: [ -L /var/www/test_aws_setup/releases/20170529131405/tmp/pids ]
+ DEBUG [40643111] Finished in 0.516 seconds with exit status 1 (failed).
+ DEBUG [f2d8aefe] Running [ -d /var/www/test_aws_setup/releases/20170529131405/tmp/pids ] as ec2-user@10.0.1.147
+ DEBUG [f2d8aefe] Command: [ -d /var/www/test_aws_setup/releases/20170529131405/tmp/pids ]
+ DEBUG [f2d8aefe] Finished in 0.516 seconds with exit status 1 (failed).
+  INFO [c379fb45] Running /usr/bin/env ln -s /var/www/test_aws_setup/shared/tmp/pids /var/www/test_aws_setup/releases/20170529131405/tmp/pids as ec2-user@10.0.1.147
+ DEBUG [c379fb45] Command: /usr/bin/env ln -s /var/www/test_aws_setup/shared/tmp/pids /var/www/test_aws_setup/releases/20170529131405/tmp/pids
+  INFO [c379fb45] Finished in 0.536 seconds with exit status 0 (successful).
+ DEBUG [e2df0a4d] Running [ -L /var/www/test_aws_setup/releases/20170529131405/tmp/cache ] as ec2-user@10.0.1.147
+ DEBUG [e2df0a4d] Command: [ -L /var/www/test_aws_setup/releases/20170529131405/tmp/cache ]
+ DEBUG [e2df0a4d] Finished in 0.527 seconds with exit status 1 (failed).
+ DEBUG [58740537] Running [ -d /var/www/test_aws_setup/releases/20170529131405/tmp/cache ] as ec2-user@10.0.1.147
+ DEBUG [58740537] Command: [ -d /var/www/test_aws_setup/releases/20170529131405/tmp/cache ]
+ DEBUG [58740537] Finished in 0.511 seconds with exit status 1 (failed).
+  INFO [1dd257bb] Running /usr/bin/env ln -s /var/www/test_aws_setup/shared/tmp/cache /var/www/test_aws_setup/releases/20170529131405/tmp/cache as ec2-user@10.0.1.147
+ DEBUG [1dd257bb] Command: /usr/bin/env ln -s /var/www/test_aws_setup/shared/tmp/cache /var/www/test_aws_setup/releases/20170529131405/tmp/cache
+  INFO [1dd257bb] Finished in 0.511 seconds with exit status 0 (successful).
+ DEBUG [575d5658] Running [ -L /var/www/test_aws_setup/releases/20170529131405/tmp/sockets ] as ec2-user@10.0.1.147
+ DEBUG [575d5658] Command: [ -L /var/www/test_aws_setup/releases/20170529131405/tmp/sockets ]
+ DEBUG [575d5658] Finished in 0.516 seconds with exit status 1 (failed).
+ DEBUG [d2dcd2d5] Running [ -d /var/www/test_aws_setup/releases/20170529131405/tmp/sockets ] as ec2-user@10.0.1.147
+ DEBUG [d2dcd2d5] Command: [ -d /var/www/test_aws_setup/releases/20170529131405/tmp/sockets ]
+ DEBUG [d2dcd2d5] Finished in 0.519 seconds with exit status 1 (failed).
+  INFO [7e3d12b4] Running /usr/bin/env ln -s /var/www/test_aws_setup/shared/tmp/sockets /var/www/test_aws_setup/releases/20170529131405/tmp/sockets as ec2-user@10.0.1.147
+ DEBUG [7e3d12b4] Command: /usr/bin/env ln -s /var/www/test_aws_setup/shared/tmp/sockets /var/www/test_aws_setup/releases/20170529131405/tmp/sockets
+  INFO [7e3d12b4] Finished in 0.516 seconds with exit status 0 (successful).
+ DEBUG [3c473d98] Running [ -L /var/www/test_aws_setup/releases/20170529131405/public/system ] as ec2-user@10.0.1.147
+ DEBUG [3c473d98] Command: [ -L /var/www/test_aws_setup/releases/20170529131405/public/system ]
+ DEBUG [3c473d98] Finished in 0.515 seconds with exit status 1 (failed).
+ DEBUG [a1d3f26c] Running [ -d /var/www/test_aws_setup/releases/20170529131405/public/system ] as ec2-user@10.0.1.147
+ DEBUG [a1d3f26c] Command: [ -d /var/www/test_aws_setup/releases/20170529131405/public/system ]
+ DEBUG [a1d3f26c] Finished in 0.524 seconds with exit status 1 (failed).
+  INFO [a29e6048] Running /usr/bin/env ln -s /var/www/test_aws_setup/shared/public/system /var/www/test_aws_setup/releases/20170529131405/public/system as ec2-user@10.0.1.147
+ DEBUG [a29e6048] Command: /usr/bin/env ln -s /var/www/test_aws_setup/shared/public/system /var/www/test_aws_setup/releases/20170529131405/public/system
+  INFO [a29e6048] Finished in 0.511 seconds with exit status 0 (successful).
+  INFO [df00041c] Running /usr/bin/env ln -s /var/www/test_aws_setup/releases/20170529131405 /var/www/test_aws_setup/releases/current as ec2-user@10.0.1.147
+ DEBUG [df00041c] Command: /usr/bin/env ln -s /var/www/test_aws_setup/releases/20170529131405 /var/www/test_aws_setup/releases/current
+  INFO [df00041c] Finished in 0.511 seconds with exit status 0 (successful).
+  INFO [a93e3e2e] Running /usr/bin/env mv /var/www/test_aws_setup/releases/current /var/www/test_aws_setup as ec2-user@10.0.1.147
+ DEBUG [a93e3e2e] Command: /usr/bin/env mv /var/www/test_aws_setup/releases/current /var/www/test_aws_setup
+  INFO [a93e3e2e] Finished in 0.519 seconds with exit status 0 (successful).
+ DEBUG [ed627535] Running if test ! -d /var/www/test_aws_setup/current; then echo "Directory does not exist '/var/www/test_aws_setup/current'" 1>&2; false; fi as ec2-user@10.0.1.147
+ DEBUG [ed627535] Command: if test ! -d /var/www/test_aws_setup/current; then echo "Directory does not exist '/var/www/test_aws_setup/current'" 1>&2; false; fi
+ DEBUG [ed627535] Finished in 0.539 seconds with exit status 0 (successful).
+ DEBUG [e38bfebf] Running [ -e /var/www/test_aws_setup/current/tmp/pids/unicorn.pid ] && kill -0 `cat /var/www/test_aws_setup/current/tmp/pids/unicorn.pid` as ec2-user@10.0.1.147
+ DEBUG [e38bfebf] Command: [ -e /var/www/test_aws_setup/current/tmp/pids/unicorn.pid ] && kill -0 `cat /var/www/test_aws_setup/current/tmp/pids/unicorn.pid`
+ DEBUG [e38bfebf] Finished in 0.520 seconds with exit status 0 (successful).
+  INFO unicorn is running...
+ DEBUG [bfa3f583] Running if test ! -d /var/www/test_aws_setup/current; then echo "Directory does not exist '/var/www/test_aws_setup/current'" 1>&2; false; fi as ec2-user@10.0.1.147
+ DEBUG [bfa3f583] Command: if test ! -d /var/www/test_aws_setup/current; then echo "Directory does not exist '/var/www/test_aws_setup/current'" 1>&2; false; fi
+ DEBUG [bfa3f583] Finished in 0.515 seconds with exit status 0 (successful).
+  INFO unicorn restarting...
+  INFO [93df87f7] Running /usr/bin/env kill -s USR2 `cat /var/www/test_aws_setup/current/tmp/pids/unicorn.pid` as ec2-user@10.0.1.147
+ DEBUG [93df87f7] Command: cd /var/www/test_aws_setup/current && /usr/bin/env kill -s USR2 `cat /var/www/test_aws_setup/current/tmp/pids/unicorn.pid`
+  INFO [93df87f7] Finished in 0.531 seconds with exit status 0 (successful).
+ DEBUG [78bbe035] Running /usr/bin/env ls -x /var/www/test_aws_setup/releases as ec2-user@10.0.1.147
+ DEBUG [78bbe035] Command: /usr/bin/env ls -x /var/www/test_aws_setup/releases
+ DEBUG [78bbe035] 	20170529100233	20170529125706	20170529130203	20170529131129	20170529131241
+ DEBUG [78bbe035] 	20170529131405
+ DEBUG [78bbe035] Finished in 0.532 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 10.0.1.147
+  INFO [bbe9faaf] Running /usr/bin/env rm -rf /var/www/test_aws_setup/releases/20170529100233 as ec2-user@10.0.1.147
+ DEBUG [bbe9faaf] Command: /usr/bin/env rm -rf /var/www/test_aws_setup/releases/20170529100233
+  INFO [bbe9faaf] Finished in 0.516 seconds with exit status 0 (successful).
+ DEBUG [e738f56f] Running if test ! -d /var/www/test_aws_setup/releases; then echo "Directory does not exist '/var/www/test_aws_setup/releases'" 1>&2; false; fi as ec2-user@10.0.1.147
+ DEBUG [e738f56f] Command: if test ! -d /var/www/test_aws_setup/releases; then echo "Directory does not exist '/var/www/test_aws_setup/releases'" 1>&2; false; fi
+ DEBUG [e738f56f] Finished in 0.513 seconds with exit status 0 (successful).
+  INFO [4304f179] Running /usr/bin/env echo "Branch master (at ae105546470fbf4e0e88d71c7cf14c5a44139175) deployed as release 20170529131405 by hendrik" >> /var/www/test_aws_setup/revisions.log as ec2-user@10.0.1.147
+ DEBUG [4304f179] Command: cd /var/www/test_aws_setup/releases && /usr/bin/env echo "Branch master (at ae105546470fbf4e0e88d71c7cf14c5a44139175) deployed as release 20170529131405 by hendrik" >> /var/www/test_aws_setup/revisions.log
+  INFO [4304f179] Finished in 0.539 seconds with exit status 0 (successful).
