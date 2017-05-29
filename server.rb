@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class MyApp < Sinatra::Base
   get '/' do
-    'Hello, nginx and unicorn!'
+    'Hello here, I am running on nginx, unicorn, and sinatra'
   end
 
   get  '/ping' do
