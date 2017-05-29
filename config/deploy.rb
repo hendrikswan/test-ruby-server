@@ -57,9 +57,11 @@ namespace :deploy do
   #     FileUtils::mkdir_p 'tmp/pids'
   #   end    
   # end 
+  
 
   task :restart do
-    puts 'after publishing'
+    puts 'after publishing - going to restart unicorn'
+    invoke 'unicorn:restart'
 
     # execute "devops/scripts/sidekiq.start.rb"
 

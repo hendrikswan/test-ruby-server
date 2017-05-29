@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 group :production, :staging do
+  gem 'capistrano3-unicorn'
   gem 'sinatra'
   gem 'unicorn'
 end
