@@ -1,9 +1,11 @@
-require 'sinatra'
+require 'sinatra/base'
 
-get '/frank-says' do
-  'Put this in your pipe & smoke it!'
-end
+class MyApp < Sinatra::Base
+  get '/' do
+    'Hello, nginx and unicorn!'
+  end
 
-get  '/ping' do
-  'everything is up and running'
+  get  '/ping' do
+    'everything is up and running'
+  end
 end

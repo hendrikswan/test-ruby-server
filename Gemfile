@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 group :production, :staging do
   gem 'sinatra'
+  gem 'unicorn'
 end
 
 
